@@ -1,0 +1,41 @@
+<%= form_tag( { :controller => "events", :action => "create" }, method: "post", local: true) do |form| %>
+
+<p><% key['logo'] %></p>
+<%= image_tag key['logo']['url'] if key['logo'] %></p>
+<p><% key ["description"]["text"].truncate(400)%></p>
+
+
+<% image = key['logo']['url'] if key['logo'] %>
+<% title = key ["name"]["text"]%>
+<% date = key ["start"]["local"].in_time_zone.strftime("%a, %B %m at %I:%M%p")%>
+
+  <% if key ["is_free"] == false %>
+  <% "Paid Event" %>
+  <% else %>
+  <% "Free Event" %>
+  <% end %>
+
+  <% unless key["description"]["text"].nil? %>
+  <% description = key["description"]["text"].truncate(400) %>
+  <% else %>
+  <% description = nil %>
+  <% end %>
+
+  <%= hidden_field_tag(:event_source_id, key["id"]) %>
+  <%= hidden_field_tag(:event_source, title) %>
+  <%= hidden_field_tag(:event_date, date) %>
+  <%= hidden_field_tag(:event_photo, image) %>
+  <%= hidden_field_tag(:event_description, description) %>
+
+  <% if key ["is_free"] == false %>
+  <%= hidden_field_tag(:event_price, "Paid Event") %>
+  <% else %>
+  <%= hidden_field_tag(:event_price, "Free Event") %>
+  <% end %>
+
+
+
+<%= submit_tag("DockIT", :id=>"button", :class=>"btn btn-primary btn-lg", :name=>"submit") %>
+<button type="button" id="calendar_btn" class="btn btn-primary btn-lg calendar"><%= link_to "Sync To Calendar", "https://calendar.google.com/calendar/render?action=TEMPLATE&text=#{title}&#{date}&details=#{description}",    {:target=>"_blank"} %>
+  </button>
+<% end %>

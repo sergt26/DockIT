@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= favicon_link_tag 'Favicon.ico' %>
+    <title>Dock.it App</title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src='/assets/bootstrap.min.js'></script>
+    <link rel="stylesheet" src='/assets/bootstrap.min.css'>
+
+
+    <!-- Custom fonts for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Old+Standard+TT:400i" rel="stylesheet">
+        <!-- Temporary navbar container fix -->
+
+  </head>
+
+  <body>
+    <!-- <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        60%
+      </div>
+    </div> -->
+
+
+<!-- Logo -->
+
+      <!-- Navigation -->
+      <nav class="navbar  navbar-toggleable-md navbar-light bg-faded">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="container">
+            <div class="row">
+            <a class="navbar-brand" href="#">
+              <div class="col-md-6"><img class="main_logo" <%= image_tag ('dock_it_A.png')%>
+
+                    <!-- <%= 'active' if current_page?(root_path) %> -->
+
+                <form class="navbar-brand" >
+
+              <%= form_tag(search_path, method: "get") do %><br>
+            <span class="nav_search_events"><%= text_field_tag([:q], nil, placeholder: "Search...") %></span>
+                <span id="city_search" class"d-inline">
+                <%=  text_field_tag(:city, nil, :required => true, placeholder: "*City") %>
+
+                </div>
+                </div>
+                <div id="submit_btn_header"><%=submit_tag("Search") %></div>
+              <% end %>
+            </form>
+              </a>
+              <div class="collapse navbar-collapse" id="navbarExample">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item nav-dock">
+                      <a class="nav-link fa fa-circle-o-notch fa-1x" aria-hidden="true"<%= link_to 'Home',root_path %>
+                  </li>
+                    <li class="nav-item nav-dock">
+                        <a class="nav-link fa fa-chevron-down fa-1x" aria-hidden="true" <%= link_to 'DockIt',dashboard_events_path  %></a>
+                    </li>
+                    <!-- <li class="nav-item nav-dock">
+                        <a class="nav-link fa fa-cog fa-1x" aria-hidden="true" <%= link_to 'Profile',dashboard_events_path  %></a>
+                    </li> -->
+                    <!-- <li class="nav-item nav-dock">
+                    <a class="nav-link fa fa-thumbs-o-up fa-1x" aria-hidden="true" <%= link_to 'About us',dashboard_events_path  %></a>
+                    </li> -->
+                    <li class="nav-item google">
+                      <% if current_user %>
+                           <a class="nav-link"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>  <%= current_user.name %></a>
+                           <%= link_to "Log out", '/logout' %>
+                         <% else %>
+                        <li class="nav-item nav-dock">
+                         <a class="nav-link fa fa-user-circle-o fa-1x" aria-hidden="true" <%= link_to "Sign in", "/auth/google_oauth2" %></a>
+                         <% end %>
+                    </li>
+                </ul>
+              </div>
+          </div>
+
+          <!-- container -->
+            </div>
+      </nav>
+
+    <%= yield %>
+
+    <%= render 'navigation/footer' %>
+
+
+    <% if Rails.env.development? %>
+
+    <% end %>
+  </body>
+</html>

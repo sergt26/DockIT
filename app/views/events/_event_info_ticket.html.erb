@@ -1,0 +1,40 @@
+<div class="modal fade" id="mytkModal_<%= index %>" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title color-wh"><strong><p><%= tk ["name"]%></p></strong></h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-sm-5">
+        
+
+
+        <strong><p><%= tk ["name"]%></p></strong>
+
+        <strong>On Sale</strong><br>
+
+          <p>Start Date: <%= tk["sales"]["public"]["startDateTime"].in_time_zone.strftime("%a, %B %m at %I:%M%p")%>
+          <br>
+          End Date:  <%= tk["sales"]["public"]["endDateTime"].in_time_zone.strftime("%a, %B %m at %I:%M%p")%></p>
+
+          <div class="ticket_price">
+
+            <%unless tk["priceRanges"] == nil %>
+            <% @min = tk["priceRanges"][0]["min"] %>
+            <% @max = tk["priceRanges"][0]["max"]  %>
+                <% if @min == @max %>
+                <%= "Ticket Price: Just #{@min}0" %>
+                <% else %>
+                <%= "Ticket Price: From #{@min}0 to #{@max}0" %>
+                <% end %>
+            <%= tk["priceRanges"][0]["currency"]%>.
+            <% end %>
+          </div>
+
+
+          <%= render partial: 'event_ticket_form', locals: { tk: tk }%>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,55 @@
+<!-- Header -->
+<header class="intro-header-dock">
+    <div class="container">
+        <div class="intro-message dock-banner">
+            <h1><strong>DockIt</strong></h1>
+            <hr class="intro-divider">
+            <!-- <h4>View all your events.</h4> -->
+
+            <ul class="list-inline intro-social-buttons">
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+
+<section>
+
+<% @events.each do |d| %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <% d.source_id%><br>
+      <img class="img-thumbnail ticket-img" src="<%=d.photo%>">
+      <!-- 410x210 -->
+    </div>
+    <div class="col-sm-6">
+      <div class="dock_event">
+        <strong><%= d.source %></strong>
+
+        <p>
+        <%= d.date %>
+      </p>
+      <p>
+        <strong><%= d.price %></strong>
+      </p>
+      <p>
+      <%= d.description %>
+    </p>
+    <button type="button" id="delete_btn" class="btn btn-primary btn-lg"><%= link_to 'Delete', event_path(d.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
+<span class="sync_btn">
+<button type="button" id="calendar_btn" class="btn btn-primary btn-lg calendar"><%= link_to "Sync To Calendar", "https://calendar.google.com/calendar/render?action=TEMPLATE&text=#{d.source}&#{d.date}&details=#{d.description}",    {:target=>"_blank"} %></button>
+</span>
+  </div>
+</div>
+<!-- <span>
+  <hr style="border-bottom:1px solid red;">
+</span> -->
+</div>
+<% end%>

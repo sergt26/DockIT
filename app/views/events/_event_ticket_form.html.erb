@@ -1,0 +1,62 @@
+<%= form_tag( { :controller => "events", :action => "create" }, method: "post", local: true) do %>
+
+<!--  Ticket Master-->
+<!-- pop-up screen event info to send to dock -->
+
+<img class="img-thumbnail ticket-img"<%= image_tag tk["images"][1]["url"] if tk["images"] %>
+<%#=  tk ["name"]%>
+
+<!-- send to dashboard -->
+<% image =  tk["images"][1]["url"].html_safe if tk["images"] %>
+<% title =  tk ["name"]%>
+<% date = tk["sales"]["public"]["startDateTime"].in_time_zone.strftime("%a, %B %m at %I:%M%p")%>
+
+  <% description = tk ["name"]%>
+
+<%#= tk["sales"]["public"]["startDateTime"].in_time_zone.strftime("%a, %B %m at %I:%M%p")%>
+ <%#= tk["sales"]["public"]["endDateTime"].in_time_zone.strftime("%a, %B %m at %I:%M%p")%>
+
+
+
+          <%#unless tk["priceRanges"] == nil %>
+          <%# @min = tk["priceRanges"][0]["min"] %>
+          <%# @max = tk["priceRanges"][0]["max"]  %>
+              <%# if @min == @max %>
+              <%#= "Ticket Price: Just #{@min}0" %>
+              <%# else %>
+              <%#= "Ticket Price: From #{@min}0 to #{@max}0" %>
+              <%# end %>
+          <%#= tk["priceRanges"][0]["currency"]%>.
+          <%# end %>
+
+
+
+
+
+
+
+
+<!-- END send info to dashboard -->
+
+  <%#= tk["sales"]["public"]["endDateTime"].in_time_zone.strftime("%a, %B %m at %I:%M%p")%>
+
+
+
+ <%= hidden_field_tag(:event_source_id, tk["id"]) %>
+ <%= hidden_field_tag(:event_source, title) %>
+ <%= hidden_field_tag(:event_date, date) %>
+ <%= hidden_field_tag(:event_photo, image) %>
+ <% hidden_field_tag(:event_description, description) %>
+
+
+ <%= submit_tag("DockIT", :id=>"button", :class=>"btn btn-primary btn-lg", :name=>"submit") %>
+ <button type="button" id="calendar_btn" class="btn btn-primary btn-lg calendar-pop"><%= link_to "Sync To Calendar", "https://calendar.google.com/calendar/render?action=TEMPLATE&text=#{title}&#{date}&details=#{description}",    {:target=>"_blank"} %>
+   </button>
+
+  <!-- <%= submit_tag "Dock It" %>
+
+<div class="actions">
+  <%= link_to "Sync To Calendar", "https://calendar.google.com/calendar/render?action=TEMPLATE&text=#{title}&#{date}&#{description},+link+here:+http://www.example.com&location=549+NW+28+street+10022&sf=true&output=xml",	{:target=>"_blank"} %>
+</div> -->
+
+   <% end %>

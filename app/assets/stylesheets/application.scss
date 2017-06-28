@@ -1,0 +1,94 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap";
+
+.row {
+    margin-top: 30px;
+}
+// different displays mobile, tablet, desktop
+@media (max-width: 575px) {
+  img.main_logo {
+    width: 35%;
+    margin: auto;
+    display: block;
+
+  // nav > .container {
+  //   width: 100%;
+  //   margin-left: -2rem;
+  .nav_search_events input[type=text]:focus  {
+        width: 140px;
+        display: block;
+
+  .navbar-brand {
+    display: initial;
+
+
+}
+}
+}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+  img.main_logo {
+    width: 22%;
+    display: relative;
+}
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+  img.main_logo {
+    width: 35%;
+    margin: -12px;
+    display: relative;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  form.navbar-brand {
+    margin-left: 40px;
+    .nav_search_events input[type=text] {
+          width: 300px;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+  img.main_logo {
+    width: 55%;
+    margin: -12px;
+    display: relative;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  form.navbar-brand {
+    margin-left: 60px;
+    .nav_search_events input[type=text] {
+          width: 250px;
+}
+    }
+  }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  img.main_logo {
+      width: 50%;
+      margin: -10px;
+      display: relative;
+      margin-top: -20px;
+  }
+  }
+  @media (min-width: 1200px) {
+      form.navbar-brand {
+        margin-left: 80px;
+        margin-top: -16px;
+        .nav_search_events input[type=text] {
+              width: 320px;
+    }
+        }
+      }
+
+@import "main";

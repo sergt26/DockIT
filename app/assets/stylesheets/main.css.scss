@@ -1,0 +1,415 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//
+
+// Extra small devices (portrait phones, less than 576px)
+
+// pop up in index, title, button dock and calendar
+button.close {
+    margin-right: 28px;
+    color: white;
+    font-size: 1.7;
+}
+
+.modal-header {
+    background-color: darkmagenta;
+}
+
+.modal-title.color-wh-pop {
+
+  color:white;
+}
+
+.modal-title.color-wh {
+
+  color:white;
+}
+
+
+
+.calendar-pop {
+    color: #fff;
+    background-color: darkslateblue;
+    margin-left: 20px;
+}
+
+.btn-primary {
+    background-color: purple;
+
+}
+
+
+
+
+// index event upcoming picture
+.events-list img {
+
+      width: 300px;
+      margin: 31px 2px 24px 90px;
+  }
+//main nav
+.navbar-light.navbar-nav.nav-link {
+    margin-bottom: -10px;
+}
+
+.btn-lg, .btn-group-lg {
+    margin-top: 10px;
+}
+
+.navbar-toggler-right {
+    top: 1rem;
+}
+.navbar-toggler {
+    z-index: 1;
+}
+.navbar-brand {
+
+margin: auto;
+margin-top: -12px;
+
+}
+
+
+.sync_btn {
+  margin-left: 20px;
+}
+
+
+// dashboard buttom del and sync
+#delete_btn a {
+
+   color: white;
+   text-decoration: none;
+}
+
+.btn-primary {
+
+   background-color: purple;
+}
+
+#calendar_btn a {
+
+   color: white;
+   text-decoration: none;
+}
+
+ .btn-primary.calendar {
+    color: #fff;
+    background-color: darkslateblue;;
+}
+.navbar-nav{
+
+text-align: center;
+
+}
+
+// search bar
+
+
+
+.nav_search_events {
+ color: red;
+    margin: 11px 0px 8px 18px;
+}
+
+#city_search {
+ color: blue;
+     margin: 8px -10px 6px -4px;
+}
+
+#submit_btn_header {
+display: none;
+}
+
+.nav_search_events input[type=text] {
+      width: 200px;
+
+}
+
+#city_search input[type=text] {
+    width: 140px;
+}
+
+input[type=text] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 6px 20px 6px 16px;
+    // -webkit-transition: width 0.4s ease-in-out;
+    // transition: width 0.4s ease-in-out;
+}
+// just the right search bar is animated
+// .nav_search_events input[type=text]:focus  {
+//     width: 90%;
+// }
+//
+// #city_search input[type=text]:focus  {
+//     width: 60%
+// }
+
+.ticket-img {
+  width: 410px;
+  height: auto;
+}
+
+.dock_event {
+  margin-top: 22px;
+  margin-bottom: 45px;
+}
+
+.form-inline {
+
+    margin: 18px;
+
+}
+
+// .navbar-nav.ml-auto {
+//
+// width: 290px;
+// }
+.nav-item.google{
+
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.nav-item.nav-dock {
+
+  margin-top: 25px;
+  font-size: 20px;
+
+}
+
+// footer
+.list-inline {
+
+        text-align: center;
+        font-size: 20px;
+
+
+}
+
+p.copyright {
+    text-align: center;
+    font-size: 14px;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 14px;
+
+}
+
+footer a.nav-link {
+
+    padding: 0.5em 0em;
+}
+
+footer a {
+      color: black;
+      margin-right: 40px;
+  }
+
+
+
+// Slider index page
+/* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
+
+// .carousel {
+//     height: 50%;
+// }
+//
+// .item,
+// .active,
+// .carousel-inner {
+//     height: 100%;
+// }
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+// .fill {
+//     width: 100%;
+//     height: 100%;
+//     background-position: center;
+//     -webkit-background-size: cover;
+//     -moz-background-size: cover;
+//     background-size: cover;
+//     -o-background-size: cover;
+// }
+
+/*!
+ * Start Bootstrap - Landing Page (http://startbootstrap.com/template-overviews/landing-page)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
+ */
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(/assets/concert-336695_1920.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.intro-header-dock {
+  padding-top: 50px;
+  padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../assets/networking-event.jpg) no-repeat center center;
+    background-size: cover;
+    height: 90%;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message.dock-banner {
+    position: relative;
+    padding-top: 6%;
+    padding-bottom: 6%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: src("/assets/images/concert-336695_1920.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+        font-size: 3em;
+    }
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}

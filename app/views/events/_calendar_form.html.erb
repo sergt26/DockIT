@@ -1,0 +1,6 @@
+<%= form_with(url: '/events/sync_to_calendar') do %>
+  <%= text_field_tag :event  %>
+  <%= text_field_tag :description  %>
+  <%= text_field_tag :dates %>
+  <%= button_to 'Sync To Calendar', { :controller => "events", :action => "sync_to_calendar" } %>
+<% end %>

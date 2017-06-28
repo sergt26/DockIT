@@ -1,0 +1,29 @@
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <ul class="list-inline">
+            <li class="list-inline-item">
+              <% if current_user %>
+                   <a class="nav-link"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>  <%= current_user.name %></a>
+                   <%= link_to "Log out", '/logout' %></li>
+                 <% else %>
+                 <li class="list-inline-item">
+                 <a class="nav-link" > <%= link_to "Sign in", "/auth/google_oauth2" %></a>
+                 <% end %>
+            </li>
+
+            <li class="list-inline-item">
+                <a href="#">Dock</a>
+            </li>
+
+            <li class="list-inline-item">
+                <a href="#">Profile</a>
+            </li>
+
+            <li class="list-inline-item">
+                <a href="#">About us</a>
+            </li>
+        </ul>
+        <p class="copyright text-muted small">Copyright &copy; Dock.it 2017. All Rights Reserved</p>
+    </div>
+</footer>
