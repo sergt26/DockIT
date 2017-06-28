@@ -20,7 +20,7 @@
 
         <strong><p><%= key ["name"]["text"]%></p></strong>
         <p><%= key ["start"]["local"].in_time_zone.strftime("%a, %B %m at %I:%M%p")  %></p>
-<p><%#= key ["start"]["local"].in_time_zone.strftime("%Y%m%dT%H%M%SZ")  %></p>
+<p><%# key ["start"]["local"].in_time_zone.strftime("%Y%m%dT%H%M%SZ")  %></p>
           <strong>
 
             <% if key ["is_free"] == false %>
